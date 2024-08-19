@@ -1,0 +1,75 @@
+@import "styles/breackpoints";
+
+.career-goal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  max-width: 260px;
+  width: 100%;
+  padding: 32px 40px 45px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    width: 100%;
+  }
+
+  &__title {
+    font-family: var(--font-proxima-nova-bold);
+    color: var(--secondary-text);
+  }
+
+  &__chart {
+    width: 180px;
+    height: 180px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-family: var(--font-proxima-nova-regular);
+      color: var(--black);
+      line-height: 24px;
+      text-align: center;
+
+      &.bold {
+        font-family: var(--font-pulp-display-bold);
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__view-insights {
+    font-family: var(--font-proxima-nova-bold);
+    color: var(--primary);
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+
+@media (width < $lg) {
+  .career-goal {
+    flex-direction: row;
+    max-width: 100%
+  }
+}
+
+@media (width < $sm) {
+  .career-goal {
+    flex-direction: column;
+    max-width: 100%
+  }
+}
