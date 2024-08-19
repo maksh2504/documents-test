@@ -1,0 +1,48 @@
+.dropdown-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 4px;
+  background: var(--white);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+
+  &__avatar {
+    background: var(--primary);
+
+    .ant-avatar-string {
+      font-size: 24px;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+
+    &-name, &-organisation {
+      line-height: 24px;
+      font-family: var(--font-proxima-nova-regular);
+    }
+
+    &-name {
+      font-family: var(--font-proxima-nova-bold);
+    }
+  }
+
+  &__separator {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  &__menu {
+    padding: 0 !important;
+    box-shadow: none !important;
+
+    &-logout {
+      padding: 8px 12px !important;
+      font-family: var(--font-proxima-nova-regular);
+      color: var(--secondary-text);
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 64px;
+  padding: 0 32px;
+  border-bottom: 1px solid var(--border-color);
+
+  &__dropdown {
+    width: 100%;
+    max-width: 272px;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &-content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    &.ant-dropdown-open {
+      .header__menu-content {
+        background: var(--header-menu-active-background);
+        border: 1px solid var(--primary);
+        border-radius: 4px;
+      }
+    }
+  }
+
+  &__avatar {
+    background: var(--primary);
+  }
+
+  &__name {
+    font-family: var(--font-proxima-nova-regular);
+    color: var(--secondary);
+  }
+}

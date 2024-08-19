@@ -1,0 +1,41 @@
+@import "styles/breackpoints";
+
+.layout {
+  display: flex;
+  width: 100%;
+  min-height: 100dvh;
+  height: 100%;
+  background: var(--secondary);
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: var(--white);
+    border-radius: 15px 0 0 15px;
+  }
+}
+
+.main {
+  height: 100%;
+  padding: 48px 144px;
+}
+
+@media (width < $xl) {
+  .main {
+    padding: 48px 64px;
+  }
+}
+
+@media (width < $sm) {
+  .layout {
+    &__content {
+      border-radius: 0;
+      margin-bottom: 60px;
+    }
+  }
+
+  .main {
+    padding: 48px 40px;
+  }
+}
