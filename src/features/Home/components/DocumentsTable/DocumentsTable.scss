@@ -1,0 +1,56 @@
+.documents-table {
+  width: 100%;
+
+  &.ant-table-wrapper {
+    .ant-table {
+      font-family: var(--font-proxima-nova-regular);
+    }
+
+    .ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .ant-table-thead > tr > th {
+      padding: 0 16px 20px;
+      background: transparent;
+      font-family: var(--font-pulp-display-bold);
+      color: var(--secondary-text);
+
+      &:before {
+        content: none !important;
+      }
+    }
+
+    .ant-table-tbody > tr > td {
+      padding: 20px 16px;
+      color: var(--secondary);
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    padding: 32px 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-pulp-display-bold);
+
+    svg {
+      min-width: 24px;
+    }
+  }
+
+  &__more {
+    cursor: pointer;
+  }
+}
