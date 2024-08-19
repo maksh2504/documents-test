@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { baseQuery } from './baseQuery';
-import { documentsResponseToModel, DocumentsModel, DocumentsRes } from 'utils/dto/singleDocument';
+import { documentsResponseToModel, DocumentsModel } from 'utils/dto/singleDocument';
 
 export const documentsService = createApi({
   reducerPath: 'documentsService',
@@ -8,9 +8,9 @@ export const documentsService = createApi({
   endpoints: (build) => ({
     getDocuments: build.query<DocumentsModel, void>({
       query: () => ({
-        url: '/documents',
+        url: '/documents.json',
       }),
-      transformResponse: (documents: DocumentsRes): DocumentsModel =>
+      transformResponse: (documents: DocumentsModel): DocumentsModel =>
         documentsResponseToModel(documents),
     }),
   }),

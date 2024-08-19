@@ -1,4 +1,3 @@
-import { BaseDto } from './baseDto';
 import { Paginated } from './paginated';
 
 export type SingleDocument = {
@@ -17,7 +16,6 @@ export type SingleDocument = {
   key?: string | number;
 };
 
-export type DocumentsRes = BaseDto<Paginated<SingleDocument>>;
 export type DocumentsModel = Paginated<SingleDocument>;
 
 const paginatedDocumentsResponseToModel = (data: SingleDocument): SingleDocument => ({
@@ -31,7 +29,7 @@ const paginatedDocumentsResponseToModel = (data: SingleDocument): SingleDocument
   key: data.id,
 });
 
-export const documentsResponseToModel = (data: DocumentsRes): DocumentsModel => ({
-  ...data.record,
-  data: data.record.data.map((i) => paginatedDocumentsResponseToModel(i)),
+export const documentsResponseToModel = (data: DocumentsModel): DocumentsModel => ({
+  ...data,
+  data: data.data.map((i) => paginatedDocumentsResponseToModel(i)),
 });

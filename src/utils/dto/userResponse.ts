@@ -1,5 +1,3 @@
-import { BaseDto } from './baseDto';
-
 export type Organisation = {
   id: number;
   name: string;
@@ -17,13 +15,11 @@ export type UserModel = {
   current_organisation: Organisation;
 };
 
-export type User = {
+export type UserResponse = {
   data: UserModel;
 };
 
-export type UserRes = BaseDto<User>;
-
-export const userResponseToModel = (data: UserRes): UserModel => ({
-  ...data.record.data,
-  email_verified_at: new Date(data.record.data.email_verified_at),
+export const userResponseToModel = (data: UserResponse): UserModel => ({
+  ...data.data,
+  email_verified_at: new Date(data?.data?.email_verified_at),
 });

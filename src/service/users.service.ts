@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { baseQuery } from './baseQuery';
-import { UserModel, UserRes, userResponseToModel } from 'utils/dto/user';
+import { UserResponse, UserModel, userResponseToModel } from 'utils/dto/userResponse';
 
 export const usersService = createApi({
   reducerPath: 'usersService',
@@ -8,9 +8,9 @@ export const usersService = createApi({
   endpoints: (build) => ({
     getUser: build.query<UserModel, boolean | null>({
       query: (isPersonal) => ({
-        url: isPersonal ? '/personal-user' : '/managed-user',
+        url: isPersonal ? '/user-personal.json' : '/user.json',
       }),
-      transformResponse: (user: UserRes): UserModel => userResponseToModel(user),
+      transformResponse: (user: UserResponse): UserModel => userResponseToModel(user),
     }),
   }),
 });

@@ -1,17 +1,21 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { TStore } from 'store';
 import { baseQuery } from './baseQuery';
-import { CareerGoal, CareerGoalsRes, careerGoalsResponseToModel } from 'utils/dto/careerGoal';
+import {
+  CareerGoalModel,
+  CareerGoalResponse,
+  careerGoalsResponseToModel,
+} from 'utils/dto/careerGoalModel';
 
 export const careerService = createApi({
   reducerPath: 'careerService',
   baseQuery: baseQuery,
   endpoints: (build) => ({
-    getCareerGoal: build.query<CareerGoal, void>({
+    getCareerGoal: build.query<CareerGoalModel, void>({
       query: () => ({
-        url: '/career-goal',
+        url: '/goals.json',
       }),
-      transformResponse: (careerGoal: CareerGoalsRes): CareerGoal =>
+      transformResponse: (careerGoal: CareerGoalResponse): CareerGoalModel =>
         careerGoalsResponseToModel(careerGoal),
     }),
   }),
