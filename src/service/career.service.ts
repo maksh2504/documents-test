@@ -5,7 +5,7 @@ import {
   CareerGoalModel,
   CareerGoalResponse,
   careerGoalsResponseToModel,
-} from 'utils/dto/careerGoalModel';
+} from 'utils/dto/careerGoal';
 
 export const careerService = createApi({
   reducerPath: 'careerService',

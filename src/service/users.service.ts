@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { baseQuery } from './baseQuery';
-import { UserResponse, UserModel, userResponseToModel } from 'utils/dto/userResponse';
+import { UserResponse, UserModel, userResponseToModel } from 'utils/dto/user';
 
 export const usersService = createApi({
   reducerPath: 'usersService',
