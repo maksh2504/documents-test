@@ -1,6 +1,6 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import { baseQuery } from './baseQuery';
-import { documentsResponseToModel, DocumentsModel } from 'utils/dto/singleDocument';
+import { documentsResponseToModel, DocumentsModel } from 'utils/dto/document';
 
 export const documentsService = createApi({
   reducerPath: 'documentsService',
