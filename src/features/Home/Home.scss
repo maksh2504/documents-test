@@ -1,0 +1,57 @@
+@import "styles/breackpoints";
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 56px;
+
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &-description {
+      font-family: var(--font-proxima-nova-regular);
+      color: var(--secondary-text);
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 32px;
+    width: 100%;
+
+    &-section {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &.full-width {
+        width: 100%;
+      }
+
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        .view-all-documents {
+          font-family: var(--font-proxima-nova-bold);
+          color: var(--primary);
+          text-align: end;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (width < $lg) {
+  .home-page {
+    &__content {
+      flex-direction: column;
+    }
+  }
+}
