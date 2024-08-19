@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'PulpDisplay-Bold';
+  src: url("PulpDisplay/PulpDisplay-Bold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: url("ProximaNova/ProximaNova-Regular.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  src: url("ProximaNova/ProximaNova-Bold.ttf") format('truetype');
+}
+
+:root {
+  --font-pulp-display-bold: PulpDisplay-Bold, sans-serif;
+  --font-proxima-nova-regular: ProximaNova-Regular, sans-serif;
+  --font-proxima-nova-bold: ProximaNova-Bold, sans-serif;
+}
