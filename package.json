@@ -25,7 +25,8 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "test": "react-scripts test",
-    "test:e2e": "cypress open",
+    "test:e2e": "cypress run --headed",
+    "test:e2e:gui": "cypress open",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx --cache",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --write \"src/**/*.{js,ts,tsx}\""
