@@ -15,7 +15,7 @@ Launches the unit test runner in the interactive watch mode.
 
 ### `npm run test:e2e`
 
-Launches E2E tests without graphical interface.
+Launches E2E tests (cypress) without graphical interface.
 
 ### `npm run test:e2e:gui`
 
