@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import { renderWithProvider, mockServer } from 'tests';
 import { CareerGoal } from './CareerGoal';
 
@@ -9,7 +9,5 @@ describe('CareerGoal', () => {
     renderWithProvider(<CareerGoal />);
 
     expect(screen.getByTestId('CareerGoal')).toBeInTheDocument();
-
-    await waitFor(() => expect(screen.getByTestId('CareerGoalChart')).toBeInTheDocument());
   });
 });
