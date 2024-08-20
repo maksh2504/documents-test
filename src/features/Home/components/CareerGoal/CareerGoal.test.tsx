@@ -8,6 +8,8 @@ describe('CareerGoal', () => {
   it('Rendered career goal', async () => {
     renderWithProvider(<CareerGoal />);
 
+    expect(screen.getByTestId('CareerGoal')).toBeInTheDocument();
+
     await waitFor(() => expect(screen.getByTestId('CareerGoalChart')).toBeInTheDocument());
   });
 });
