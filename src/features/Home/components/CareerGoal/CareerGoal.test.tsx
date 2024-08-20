@@ -1,6 +1,6 @@
 import { screen, waitFor } from '@testing-library/react';
 import { renderWithProvider, mockServer, careerGoal } from 'tests';
-import { CareerGoal } from './components/CareerGoal/CareerGoal';
+import { CareerGoal } from './CareerGoal';
 
 const server = mockServer();
 
