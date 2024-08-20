@@ -2,7 +2,7 @@ import React from 'react';
 import { Dropdown, MenuProps, TableProps } from 'antd';
 import { ReactComponent as Document } from 'assets/svg/documentTable/document.svg';
 import { ReactComponent as More } from 'assets/svg/documentTable/more.svg';
-import { SingleDocument } from 'utils/dto/singleDocument';
+import { SingleDocument } from 'utils/dto/document';
 import { format } from 'date-fns';
 
 export const documentsTableColumns = (

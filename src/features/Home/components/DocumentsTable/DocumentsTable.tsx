@@ -1,7 +1,7 @@
 import React from 'react';
 import { MenuProps, Table } from 'antd';
 import { useGetDocumentsQuery } from 'service';
-import { SingleDocument } from 'utils/dto/singleDocument';
+import { SingleDocument } from 'utils/dto/document';
 import { documentsTableColumns } from './columns';
 
 import './DocumentsTable.scss';
