@@ -33,3 +33,5 @@ export const DocumentsTable = () => {
     </div>
   );
 };
+
+export default DocumentsTable;
