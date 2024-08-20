@@ -21,17 +21,15 @@ export const DocumentsTable = () => {
 
   return (
     <div className="documents-table__section">
-      {documents && (
-        <Table
-          className="documents-table"
-          data-testid="DocumentsTable"
-          columns={documentsTableColumns(documentItemActions)}
-          dataSource={documents.data}
-          pagination={false}
-          bordered={false}
-          scroll={{ x: '100%' }}
-        />
-      )}
+      <Table
+        className="documents-table"
+        data-testid="DocumentsTable"
+        columns={documentsTableColumns(documentItemActions)}
+        dataSource={documents?.data}
+        pagination={false}
+        bordered={false}
+        scroll={{ x: '100%' }}
+      />
     </div>
   );
 };
