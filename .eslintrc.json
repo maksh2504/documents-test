@@ -1,4 +1,12 @@
 {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "env": {
+        "jest": true
+    },
     "extends": ["plugin:@typescript-eslint/recommended", "react-app", "prettier"],
     "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier"],
     "rules": {

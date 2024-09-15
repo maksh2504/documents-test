@@ -11,6 +11,6 @@ export const mockRTKQuery = () => {
   });
 };
 
-export const mockRTKQueryHookReturnValue = (hook: any, value: any) => {
+export const mockRTKQueryHookReturnValue = (hook: unknown, value: unknown) => {
   return (hook as jest.Mock).mockReturnValue(value);
 };
