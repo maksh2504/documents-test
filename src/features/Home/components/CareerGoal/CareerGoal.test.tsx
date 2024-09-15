@@ -1,13 +1,28 @@
 import { screen } from '@testing-library/react';
-import { renderWithProvider, mockServer } from 'tests';
-import { CareerGoal } from './CareerGoal';
+import { careerGoal, renderWithProvider } from 'tests';
+import { useGetCareerGoalQuery } from 'service';
+import CareerGoal from './CareerGoal';
 
-const server = mockServer();
+jest.mock('service', () => {
+  const originalModule = jest.requireActual('service');
+  return {
+    ...originalModule,
+    useGetCareerGoalQuery: jest.fn(),
+  };
+});
 
-describe('CareerGoal', () => {
-  it('Rendered career goal', async () => {
+describe('CareerGoal with RTL', () => {
+  test('renders CareerGoal', async () => {
+    await (useGetCareerGoalQuery as jest.Mock).mockReturnValue({
+      data: careerGoal,
+      error: undefined,
+      isFetching: false,
+      isLoading: false,
+    });
+
     renderWithProvider(<CareerGoal />);
 
-    expect(screen.getByTestId('CareerGoal')).toBeInTheDocument();
+    const chart = screen.getByTestId('CareerGoalChart');
+    expect(chart).toBeInTheDocument();
   });
 });

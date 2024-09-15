@@ -1,16 +1,28 @@
-import { screen, waitFor } from '@testing-library/react';
-import { renderWithProvider, mockServer, overrideMatchMedia } from 'tests';
+import { screen } from '@testing-library/react';
+import { documents, renderWithProvider } from 'tests';
 import DocumentsTable from './DocumentsTable';
+import { useGetDocumentsQuery } from 'service';
 
-const server = mockServer();
+jest.mock('service', () => {
+  const originalModule = jest.requireActual('service');
+  return {
+    ...originalModule,
+    useGetDocumentsQuery: jest.fn(),
+  };
+});
 
-describe('DocumentsTable', () => {
-  beforeAll(() => {
-    overrideMatchMedia();
-  });
-  it('Rendered documents table', async () => {
+describe('DocumentsTable with RTL', () => {
+  test('renders DocumentsTable', async () => {
+    await (useGetDocumentsQuery as jest.Mock).mockReturnValue({
+      data: documents,
+      error: undefined,
+      isFetching: false,
+      isLoading: false,
+    });
+
     renderWithProvider(<DocumentsTable />);
 
-    await waitFor(() => expect(screen.getByTestId('DocumentsTable')).toBeInTheDocument());
+    const table = screen.getByTestId('DocumentsTable');
+    expect(table).toBeInTheDocument();
   });
 });
