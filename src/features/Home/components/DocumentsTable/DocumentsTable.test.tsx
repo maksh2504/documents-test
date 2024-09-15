@@ -17,4 +17,18 @@ describe('DocumentsTable with RTL', () => {
     const table = screen.getByTestId('DocumentsTable');
     expect(table).toBeInTheDocument();
   });
+
+  // test('DocumentsTable is loading', () => {
+  //   mockRTKQueryHookReturnValue(useGetDocumentsQuery, {
+  //     isLoading: true,
+  //   });
+  //
+  //   renderWithProvider(<DocumentsTable />);
+  //
+  //   const loader = screen.getByTestId('DocumentsTableLoader');
+  //   expect(loader).toBeInTheDocument();
+  //
+  //   const table = screen.queryByTestId('DocumentsTable');
+  //   expect(table).toBeNull();
+  // });
 });
