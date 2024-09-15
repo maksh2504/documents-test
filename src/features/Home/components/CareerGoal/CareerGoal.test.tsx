@@ -1,22 +1,14 @@
 import { screen } from '@testing-library/react';
-import { careerGoal, renderWithProvider } from 'tests';
+import { careerGoal, mockRTKQueryHookReturnValue, mockRTKQuery, renderWithProvider } from 'tests';
 import { useGetCareerGoalQuery } from 'service';
 import CareerGoal from './CareerGoal';
 
-jest.mock('service', () => {
-  const originalModule = jest.requireActual('service');
-  return {
-    ...originalModule,
-    useGetCareerGoalQuery: jest.fn(),
-  };
-});
+mockRTKQuery();
 
 describe('CareerGoal with RTL', () => {
   test('renders CareerGoal', async () => {
-    await (useGetCareerGoalQuery as jest.Mock).mockReturnValue({
+    mockRTKQueryHookReturnValue(useGetCareerGoalQuery, {
       data: careerGoal,
-      error: undefined,
-      isFetching: false,
       isLoading: false,
     });
 

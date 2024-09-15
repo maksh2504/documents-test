@@ -25,7 +25,7 @@ export const DocumentsTable = () => {
         className="documents-table"
         data-testid="DocumentsTable"
         columns={documentsTableColumns(documentItemActions)}
-        dataSource={documents?.data}
+        dataSource={documents?.data.map((value) => ({ ...value, key: value.id }))}
         pagination={false}
         bordered={false}
         scroll={{ x: '100%' }}

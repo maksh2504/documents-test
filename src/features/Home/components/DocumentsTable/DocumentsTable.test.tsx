@@ -1,22 +1,14 @@
 import { screen } from '@testing-library/react';
-import { documents, renderWithProvider } from 'tests';
+import { documents, renderWithProvider, mockRTKQueryHookReturnValue, mockRTKQuery } from 'tests';
 import DocumentsTable from './DocumentsTable';
 import { useGetDocumentsQuery } from 'service';
 
-jest.mock('service', () => {
-  const originalModule = jest.requireActual('service');
-  return {
-    ...originalModule,
-    useGetDocumentsQuery: jest.fn(),
-  };
-});
+mockRTKQuery();
 
 describe('DocumentsTable with RTL', () => {
   test('renders DocumentsTable', async () => {
-    await (useGetDocumentsQuery as jest.Mock).mockReturnValue({
+    mockRTKQueryHookReturnValue(useGetDocumentsQuery, {
       data: documents,
-      error: undefined,
-      isFetching: false,
       isLoading: false,
     });
 
