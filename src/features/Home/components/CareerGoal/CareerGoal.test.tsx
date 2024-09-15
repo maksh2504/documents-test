@@ -1,13 +1,20 @@
 import { screen } from '@testing-library/react';
-import { renderWithProvider, mockServer } from 'tests';
-import { CareerGoal } from './CareerGoal';
+import { careerGoal, mockRTKQueryHookReturnValue, mockRTKQuery, renderWithProvider } from 'tests';
+import { useGetCareerGoalQuery } from 'service';
+import CareerGoal from './CareerGoal';
 
-const server = mockServer();
+mockRTKQuery();
 
-describe('CareerGoal', () => {
-  it('Rendered career goal', async () => {
+describe('CareerGoal with RTL', () => {
+  test('renders CareerGoal', () => {
+    mockRTKQueryHookReturnValue(useGetCareerGoalQuery, {
+      data: careerGoal,
+      isLoading: false,
+    });
+
     renderWithProvider(<CareerGoal />);
 
-    expect(screen.getByTestId('CareerGoal')).toBeInTheDocument();
+    const chart = screen.getByTestId('CareerGoalChart');
+    expect(chart).toBeInTheDocument();
   });
 });
