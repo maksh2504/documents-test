@@ -6,7 +6,7 @@ import { useGetDocumentsQuery } from 'service';
 mockRTKQuery();
 
 describe('DocumentsTable with RTL', () => {
-  test('renders DocumentsTable', async () => {
+  test('renders DocumentsTable', () => {
     mockRTKQueryHookReturnValue(useGetDocumentsQuery, {
       data: documents,
       isLoading: false,

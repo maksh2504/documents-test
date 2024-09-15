@@ -6,7 +6,7 @@ import CareerGoal from './CareerGoal';
 mockRTKQuery();
 
 describe('CareerGoal with RTL', () => {
-  test('renders CareerGoal', async () => {
+  test('renders CareerGoal', () => {
     mockRTKQueryHookReturnValue(useGetCareerGoalQuery, {
       data: careerGoal,
       isLoading: false,
